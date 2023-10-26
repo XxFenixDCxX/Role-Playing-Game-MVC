@@ -15,7 +15,7 @@ require_once(dirname(__FILE__) . '/../../../utils/SessionUtils.php');
     <body>
         <nav class="navbar navbar-light bg-secondary text-white">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="../../../../index.php">
                     <img src="../../../assets/img/logo.png" alt="Logo" width="100" height="auto">
                 </a>
                 <ul class="navbar-nav ml-auto">

@@ -15,12 +15,20 @@ require_once(dirname(__FILE__) . '/../../../utils/SessionUtils.php');
     <body>
         <nav class="navbar navbar-light bg-secondary text-white">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="../../../../index.php">
                     <img src="../../../assets/img/logo.png" alt="Logo" width="100" height="auto">
                 </a>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="iniciar-sesion.html">Iniciar Sesión</a>
+                        <a class="nav-link" href="../../public/views/user/logout.php">
+                            <?php
+                                if (SessionUtils::loggedIn()){
+                                    echo  $_SESSION['user'];
+                                }else {
+                                    header('Location: ../../public/views/index.php');
+                                }
+                            ?>
+                        </a>
                     </li>
                 </ul>
             </div>
