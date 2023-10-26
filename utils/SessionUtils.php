@@ -1,15 +1,5 @@
 <?php
 
-/**
- * class SessionUtils
- * 
- * Contains util methods to deal with SESSIONS.
- *
- * @version    0.1
- * 
- * @author     Ander Frago <ander_frago@cuatrovientos.org>
- */
-
 class SessionUtils {
 
     /**

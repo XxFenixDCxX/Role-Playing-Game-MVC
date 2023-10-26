@@ -1,5 +1,4 @@
 <?php
-/**
   // Analize session
   require_once('utils/SessionUtils.php');
   // Redirects to login page in public views or private views
@@ -13,9 +12,8 @@
   // Not logged yet, anonimous access
   header("Location: app/public/views/index.php");
   }
- * 
- * */
 ?>
+<!--
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -32,7 +30,6 @@
                     <img src="./assets/img/logo.png" alt="Logo" width="100" height="auto">
                 </a>
 
-                <!-- Agrega la opción de Iniciar Sesión -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="iniciar-sesion.html">Iniciar Sesión</a>
@@ -81,6 +78,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Nombre de la Criatura 3</h5>
                         <p class="card-text">Descripción de la Criatura 3.</p>
+                        <a href="#" class="btn btn-primary">Mostrar mas</a>
                         <a href="#" class="btn btn-primary">Modificar</a>
                         <a href="#" class="btn btn-danger">Eliminar</a>
                     </div>
@@ -90,3 +88,4 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
+-->
