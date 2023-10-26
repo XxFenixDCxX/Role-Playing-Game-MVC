@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2023 a las 18:11:10
+-- Tiempo de generación: 26-10-2023 a las 19:04:17
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `rolegame`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `creature`
+--
+
+CREATE TABLE `creature` (
+  `idCreature` int(11) NOT NULL,
+  `name` varchar(150) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `avatar` varchar(255) NOT NULL,
+  `attackPower` int(11) NOT NULL,
+  `lifeLevel` int(11) NOT NULL,
+  `weapon` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `creature`
+--
+ALTER TABLE `creature`
+  ADD PRIMARY KEY (`idCreature`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
