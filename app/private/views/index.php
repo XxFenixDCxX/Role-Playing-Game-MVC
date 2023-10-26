@@ -41,7 +41,7 @@ require_once(dirname(__FILE__) . '/../../../utils/SessionUtils.php');
                 <div class="col-md-6">
                     <h2>Comunidad de usuarios de Heroes</h2>
                     <p>La aventura comienza aqui. En tu navegador</p>
-                    <a href="./user/singup.php" class="btn btn-primary">Alta Usuario</a>
+                    <a href="./user/singup.php" class="btn btn-primary">Agregar Criatura</a>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@ require_once(dirname(__FILE__) . '/../../../utils/SessionUtils.php');
             <?php
                 for ($i = 0; $i < sizeof($creatures); $i++) {
                     if (isset($creatures[$i])) {
-                        echo $creatures[$i]->publicCreature2HTML();
+                        echo $creatures[$i]->privateCreature2HTML();
                     }
                 }
              ?>
