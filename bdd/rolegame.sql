@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2023 a las 19:04:17
+-- Tiempo de generación: 26-10-2023 a las 20:34:50
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -38,6 +38,32 @@ CREATE TABLE `creature` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `creature`
+--
+
+INSERT INTO `creature` (`idCreature`, `name`, `description`, `avatar`, `attackPower`, `lifeLevel`, `weapon`) VALUES
+(1, 'Dragon', 'A powerful dragon.', 'https://static.wikia.nocookie.net/labibliotecadelviejomundo/images/8/8f/Drag%C3%B3n_de_Fuego_por_Sandara.jpg/revision/latest/zoom-crop/width/500/height/500?cb=20150413200815&path-prefix=es', 100, 200, 'Fire breath');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `idUser` int(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`idUser`, `email`, `password`) VALUES
+(8, 'arkaitzcs@gmail.com', 'a');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -46,6 +72,28 @@ CREATE TABLE `creature` (
 --
 ALTER TABLE `creature`
   ADD PRIMARY KEY (`idCreature`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`idUser`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `creature`
+--
+ALTER TABLE `creature`
+  MODIFY `idCreature` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `idUser` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
