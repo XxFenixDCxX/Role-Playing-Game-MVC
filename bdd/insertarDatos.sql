@@ -8,5 +8,5 @@ SET @lifeLevel = 200;
 SET @weapon = N'Fire breath';
 
 -- Query SQL
-INSERT INTO creature (idCreature, name, description, avatar, attackPower, lifeLevel, weapon)
-VALUES (@idCreature, @name, @description, @avatar, @attackPower, @lifeLevel, @weapon);
+INSERT INTO creature (name, description, avatar, attackPower, lifeLevel, weapon)
+VALUES (, @name, @description, @avatar, @attackPower, @lifeLevel, @weapon);
