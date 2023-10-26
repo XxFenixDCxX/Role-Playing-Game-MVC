@@ -20,7 +20,7 @@ function createAction() {
     $user->setPassword($pass);
     //Creamos un objeto UserDAO para hacer las llamadas a la BD
     $userDAO = new UserDAO();
-    if ($userDAO->check($user)){
+    if (!$userDAO->check($user)){
         $userDAO->insert($user);
         // Establecemos la sesión
         SessionUtils::startSessionIfNotStarted();
@@ -28,7 +28,7 @@ function createAction() {
 
         header('Location: ../../../app/private/views/index.php');   
     } else{
-        $error = "El usuario ya existe. Por favor, elige otro nombre de usuario.";
+        $error = "El usuario ya existe";
         header('Location: ../../../app/public/views/user/singup.php?error=' . urlencode($error));
     }
 }

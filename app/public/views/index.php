@@ -20,7 +20,7 @@ require_once(dirname(__FILE__) . '/../../../utils/SessionUtils.php');
                 </a>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="iniciar-sesion.html">Iniciar Sesión</a>
+                        <a class="nav-link" href="./user/login.php">Iniciar Sesión</a>
                     </li>
                 </ul>
             </div>
