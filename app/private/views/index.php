@@ -41,7 +41,7 @@ require_once(dirname(__FILE__) . '/../../../utils/SessionUtils.php');
                 <div class="col-md-6">
                     <h2>Comunidad de usuarios de Heroes</h2>
                     <p>La aventura comienza aqui. En tu navegador</p>
-                    <a href="./user/singup.php" class="btn btn-primary">Agregar Criatura</a>
+                    <a href="./creature/insert.php" class="btn btn-primary">Agregar Criatura</a>
                 </div>
             </div>
         </div>
