@@ -37,29 +37,35 @@ class CreatureDAO {
 
     public function insert($candidate) {
         $query = "INSERT INTO " . CreatureDAO::CREATURE_TABLE .
-                " (company, position, function) VALUES(?,?,?)";
+                " (name, description, avatar, attackPower, lifeLevel, weapon) VALUES(?,?,?,?,?,?)";
         $stmt = mysqli_prepare($this->conn, $query);
-        $company = $candidate->getCompany();
-        $position = $candidate->getPosition();
-        $function = $candidate->getFunction();
+        $name = $candidate->getName();
+        $description = $candidate->getDescription();
+        $avatar = $candidate->getAvatar();
+        $attackPower = $candidate->getAttackPower();
+        $lifeLevel = $candidate->getLifeLevel();
+        $weapon = $candidate->getWeapon();
         
-        mysqli_stmt_bind_param($stmt, 'sss', $company, $position, $function);
+        mysqli_stmt_bind_param($stmt, 'ssssss', $name, $description, $avatar, $attackPower, $lifeLevel, $weapon);
         return $stmt->execute();
     }
 
     public function selectById($id) {
-        $query = "SELECT company, position, function FROM " . CreatureDAO::CREATURE_TABLE . " WHERE id=?";
+        $query = "SELECT name, description, avatar, attackPower, lifeLevel, weapon FROM " . CreatureDAO::CREATURE_TABLE . " WHERE idCreature=?";
         $stmt = mysqli_prepare($this->conn, $query);
         mysqli_stmt_bind_param($stmt, 'i', $id);
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $company, $position, $function);
+        mysqli_stmt_bind_result($stmt, $name, $description, $avatar, $attackPower, $lifeLevel, $weapon);
 
         $candidate = new Creature();
         while (mysqli_stmt_fetch($stmt)) {
-            $candidate->setIdOffer($id);
-            $candidate->setCompany($company);
-            $candidate->setPosition($position);
-            $candidate->setFunction($function);
+            $candidate->setIdCreature($id);
+            $candidate->setName($name);
+            $candidate->setDescription($description);
+            $candidate->setAvatar($avatar);
+            $candidate->setAttackPower($attackPower);
+            $candidate->setLifeLevel($lifeLevel);
+            $candidate->setWeapon($weapon);
        }
 
         return $candidate;
@@ -67,19 +73,22 @@ class CreatureDAO {
 
     public function update($candidate) {
         $query = "UPDATE " . CreatureDAO::CREATURE_TABLE .
-                " SET company=?, position=?, function=?"
-                . " WHERE id=?";
+                " SET name=?, description=?, avatar=?, attackPower=?, lifeLevel=?, weapon=?"
+                . " WHERE idCreature=?";
         $stmt = mysqli_prepare($this->conn, $query);
-        $company = $candidate->getCompany();
-        $position= $candidate->getPosition();
-        $function = $candidate->getFunction();
-        $id = $candidate->getIdOffer();
-        mysqli_stmt_bind_param($stmt, 'sssi', $company, $position, $function, $id);
+        $name = $candidate->getName();
+        $description = $candidate->getDescription();
+        $avatar = $candidate->getAvatar();
+        $attackPower = $candidate->getAttackPower();
+        $lifeLevel = $candidate->getLifeLevel();
+        $weapon = $candidate->getWeapon();
+        $id = $candidate->getIdCreature();
+        mysqli_stmt_bind_param($stmt, 'ssssssi', $name, $description, $avatar, $attackPower, $lifeLevel, $weapon, $id);
         return $stmt->execute();
     }
     
     public function delete($id) {
-        $query = "DELETE FROM " . CreatureDAO::CREATURE_TABLE . " WHERE id =?";
+        $query = "DELETE FROM " . CreatureDAO::CREATURE_TABLE . " WHERE idCreature =?";
         $stmt = mysqli_prepare($this->conn, $query);
         mysqli_stmt_bind_param($stmt, 'i', $id);
         return $stmt->execute();

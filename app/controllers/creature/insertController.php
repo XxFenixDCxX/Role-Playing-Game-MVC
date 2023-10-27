@@ -1,7 +1,7 @@
 <?php
 //Es necesario que importemos los ficheros creados con anterioridad porque los vamos a utilizar desde este fichero.
-require_once(dirname(__FILE__) . '/../../../persistence/DAO/OfferDAO.php');
-require_once(dirname(__FILE__) . '/../../../app/models/Offer.php');
+require_once(dirname(__FILE__) . '/../../../persistence/DAO/creatureDAO.php');
+require_once(dirname(__FILE__) . '/../../../app/models/Creature.php');
 require_once(dirname(__FILE__) . '/../../../app/models/validations/ValidationsRules.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -11,17 +11,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Función encargada de crear nuevas ofertas
 function createAction() {
     // Obtención de los valores del formulario y validación
-    $company = ValidationsRules::test_input($_POST["company"]);
-    $position = ValidationsRules::test_input($_POST["position"]);
-    $function = ValidationsRules::test_input($_POST["function"]);
+    $nombre = ValidationsRules::test_input($_POST["name"]);
+    $descripcion = ValidationsRules::test_input($_POST["description"]);
+    $avatar = ValidationsRules::test_input($_POST["avatar"]);
+    $attackPower = ValidationsRules::test_input($_POST["attackPower"]);
+    $lifeLevel = ValidationsRules::test_input($_POST["lifeLevel"]);
+    $weapon = ValidationsRules::test_input($_POST["weapon"]);
+    
     // Creación de objeto auxiliar   
-    $offer = new Offer();
-    $offer->setCompany($company);
-    $offer->setPosition($position);
-    $offer->setFunction($function);
+    $creature = new Creature();
+    $creature->setName($nombre);
+    $creature->setDescription($descripcion);
+    $creature->setAvatar($avatar);
+    $creature->setAttackPower($attackPower);
+    $creature->setLifeLevel($lifeLevel);
+    $creature->setWeapon($weapon);
     //Creamos un objeto OfferDAO para hacer las llamadas a la BD
-    $offerDAO = new OfferDAO();
-    $offerDAO->insert($offer);
+    $creatureDAO = new CreatureDAO();
+    $creatureDAO->insert($creature);
  
     header('Location: ../../../index.php');
 }
