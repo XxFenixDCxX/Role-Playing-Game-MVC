@@ -5,8 +5,8 @@ require_once(dirname(__FILE__) . '\..\..\..\models\Creature.php');
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
 
-    $offerDAO = new OfferDAO();
-    $offer = $offerDAO->selectById($id);
+    $creatureDAO = new CreatureDAO();
+    $creature = $creatureDAO->selectById($id);
 }
 ?>
 ?>
@@ -48,22 +48,22 @@ if (isset($_GET["id"])) {
                                 <div class="form-group">
                                     <label for="company" class="col-sm-2 control-label">Company</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="company" id="company" placeholder="Empresa" value="<?php echo $offer->getCompany(); ?>">
+                                        <input type="text" class="form-control" name="company" id="company" placeholder="Empresa" value="<?php echo $creature->getCompany(); ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="position" class="col-sm-2 control-label">Position</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="position" name="position" placeholder="Cargo" value="<?php echo $offer->getPosition(); ?>">
+                                        <input type="text" class="form-control" id="position" name="position" placeholder="Cargo" value="<?php echo $creature->getPosition(); ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="function" class="col-sm-2 control-label">Function</label>
                                     <div class="col-sm-10">
-                                        <input type="textbox" class="form-control" id="function" name="function" placeholder="Función" value="<?php echo $offer->getFunction(); ?>">
+                                        <input type="textbox" class="form-control" id="function" name="function" placeholder="Función" value="<?php echo $creature->getFunction(); ?>">
                                     </div>
                                 </div>
-                                <input type="hidden" name="id" value="<?php echo $offer->getIdOffer(); ?>">
+                                <input type="hidden" name="id" value="<?php echo $creature->getIdOffer(); ?>">
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
                                         <button type="submit" class="btn btn-default">Edit</button>
