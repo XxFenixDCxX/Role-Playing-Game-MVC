@@ -1,5 +1,14 @@
 <?php
 require_once(dirname(__FILE__) . '/../../../../utils/SessionUtils.php');
+require_once(dirname(__FILE__) . '\..\..\..\..\persistence\DAO\creatureDAO.php');
+require_once(dirname(__FILE__) . '\..\..\..\models\Creature.php');
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+
+    $offerDAO = new OfferDAO();
+    $offer = $offerDAO->selectById($id);
+}
+?>
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -34,49 +43,30 @@ require_once(dirname(__FILE__) . '/../../../../utils/SessionUtils.php');
                 <div class="col-md-6 offset-md-3">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Agregar Criaturas</h5>
-                            <form class="form-horizontal" method="post" action="../../../controllers/creature/insertController.php">
-
+                            <h5 class="card-title">Editar Criaturas</h5>
+                            <form class="form-horizontal" method="post" action="../../../controllers/offer/editController.php">
                                 <div class="form-group">
-                                    <label for="name" class="col-sm-2 control-label">Nombre</label>
+                                    <label for="company" class="col-sm-2 control-label">Company</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="name" id="name" placeholder="Nombre" value="">
+                                        <input type="text" class="form-control" name="company" id="company" placeholder="Empresa" value="<?php echo $offer->getCompany(); ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="description" class="col-sm-2 control-label">Descripcion</label>
+                                    <label for="position" class="col-sm-2 control-label">Position</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="description" name="description" placeholder="Descripcion" value="">
+                                        <input type="text" class="form-control" id="position" name="position" placeholder="Cargo" value="<?php echo $offer->getPosition(); ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="avatar" class="col-sm-2 control-label">Avatar</label>
+                                    <label for="function" class="col-sm-2 control-label">Function</label>
                                     <div class="col-sm-10">
-                                        <input type="textbox" class="form-control" id="avatar" name="avatar" placeholder="Avatar" value="">
+                                        <input type="textbox" class="form-control" id="function" name="function" placeholder="Función" value="<?php echo $offer->getFunction(); ?>">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="attackPower" class="col-sm-2 control-label">Fuerza</label>
-                                    <div class="col-sm-10">
-                                        <input type="textbox" class="form-control" id="attackPower" name="attackPower" placeholder="Fuerza de ataque" value="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="lifeLevel" class="col-sm-2 control-label">Vida</label>
-                                    <div class="col-sm-10">
-                                        <input type="textbox" class="form-control" id="lifeLevel" name="lifeLevel" placeholder="Vida" value="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="weapon" class="col-sm-2 control-label">Arma</label>
-                                    <div class="col-sm-10">
-                                        <input type="textbox" class="form-control" id="weapon" name="weapon" placeholder="Arma" value="">
-                                    </div>
-                                </div>
-
+                                <input type="hidden" name="id" value="<?php echo $offer->getIdOffer(); ?>">
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-secondary">Crear criatura</button>
+                                        <button type="submit" class="btn btn-default">Edit</button>
                                     </div>
                                 </div>
                             </form>
@@ -88,5 +78,3 @@ require_once(dirname(__FILE__) . '/../../../../utils/SessionUtils.php');
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
-
-

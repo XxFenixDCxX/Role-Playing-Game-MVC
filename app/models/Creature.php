@@ -78,7 +78,7 @@ class Creature {
         $result .= '<h5 class="card-title">'. $this->name.'</h5>';
         $result .= '<p class="card-text">'. $this->description.'</p>';
         $result .= '<a href="#" class="btn btn-primary">Mostrar mas</a>';
-        $result .= '<a href="#" class="btn btn-primary">Modificar</a>';
+        $result .= '<a href="creature/edit.php?id=' . $this->getIdCreature() . '" class="btn btn-primary">Modificar</a>';
         $result .= '<a href="../../controllers/creature/deleteController.php?id='.$this->getIdCreature().'" class="btn btn-danger">Eliminar</a>';
         $result .= '</div>';
         $result .= '</div>';
