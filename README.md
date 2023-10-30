@@ -68,4 +68,4 @@ Se ha proporcionado un diagrama de clases que explica la arquitectura de la solu
 - La seguridad y autenticación no se han abordado en este proyecto, ya que no eran requisitos específicos.
 
 ## Autor
-- [Arkaitz Calvo Saldias]
+\tArkaitz Calvo Saldias
