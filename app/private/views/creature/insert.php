@@ -22,7 +22,7 @@ require_once(dirname(__FILE__) . '/../../../../utils/SessionUtils.php');
                             if (SessionUtils::loggedIn()) {
                                 echo $_SESSION['user'];
                             } else {
-                                header('Location: ../../public/views/index.php');
+                                header('Location: ../../../public/views/index.php');
                             }
                             ?></a>
                     </li>

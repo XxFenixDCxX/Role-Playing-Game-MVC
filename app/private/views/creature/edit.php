@@ -30,7 +30,7 @@ if (isset($_GET["id"])) {
                             if (SessionUtils::loggedIn()) {
                                 echo $_SESSION['user'];
                             } else {
-                                header('Location: ../../public/views/index.php');
+                                header('Location: ../../../public/views/index.php');
                             }
                             ?></a>
                     </li>

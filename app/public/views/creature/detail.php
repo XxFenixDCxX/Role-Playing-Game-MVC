@@ -33,13 +33,7 @@ if (isset($_GET["id"])) {
                 </a>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../../../public/views/user/logout.php"><?php
-                            if (SessionUtils::loggedIn()) {
-                                echo $_SESSION['user'];
-                            } else {
-                                header('Location: ../../../public/views/index.php');
-                            }
-                            ?></a>
+                        <a class="nav-link" href="../user/login.php">Iniciar Sesión</a>
                     </li>
                 </ul>
             </div>
@@ -64,15 +58,6 @@ if (isset($_GET["id"])) {
                     <p class=" card-text description">Arma:  <?php 
                             echo (isset($_GET["id"])? $creature->getWeapon() : "") ;    
                     ?></p> 
-                </div>
-                
-                <div  class=" btn-group card-footer" role="group">
-                    <a type="button" class="btn btn-success" href="edit.php?id=<?php 
-                            echo (isset($_GET["id"])? $creature->getIdCreature() : "") ;    
-                    ?><">Modificar</a> 
-                    <a type="button" class="btn btn-danger" href="../../../controllers/creature/deleteController.php?id=<?php 
-                            echo (isset($_GET["id"])? $creature->getIdCreature() : "") ;    
-                    ?><?>">Borrar</a> 
                 </div>
             </div>
             <!-- Footer -->
