@@ -66,6 +66,3 @@ Se ha proporcionado un diagrama de clases que explica la arquitectura de la solu
 ## Notas
 - Este proyecto se centra principalmente en la lógica y la estructura del backend, por lo que la parte frontend se mantiene simple y funcional.
 - La seguridad y autenticación no se han abordado en este proyecto, ya que no eran requisitos específicos.
-
-## Autor
-\tArkaitz Calvo Saldias
