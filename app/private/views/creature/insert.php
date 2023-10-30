@@ -8,7 +8,7 @@ require_once(dirname(__FILE__) . '/../../../../utils/SessionUtils.php');
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Incluye Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-        <title>Página de Registro</title>
+        <title>Página de Agregar</title>
     </head>
     <body>
         <nav class="navbar navbar-light bg-secondary text-white">

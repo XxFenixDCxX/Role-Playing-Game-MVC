@@ -1,6 +1,6 @@
 <?php
 require_once(dirname(__FILE__) . '/../../../../utils/SessionUtils.php');
-require_once(dirname(__FILE__) . '\..\..\..\..\persistence\DAO\creatureDAO.php');
+require_once(dirname(__FILE__) . '\..\..\..\..\persistence\DAO\CreatureDAO.php');
 require_once(dirname(__FILE__) . '\..\..\..\models\Creature.php');
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
@@ -9,7 +9,6 @@ if (isset($_GET["id"])) {
     $creature = $creatureDAO->selectById($id);
 }
 ?>
-?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -17,7 +16,7 @@ if (isset($_GET["id"])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Incluye Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-        <title>Página de Registro</title>
+        <title>Página de Edicion</title>
     </head>
     <body>
         <nav class="navbar navbar-light bg-secondary text-white">
@@ -44,29 +43,47 @@ if (isset($_GET["id"])) {
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Editar Criaturas</h5>
-                            <form class="form-horizontal" method="post" action="../../../controllers/offer/editController.php">
+                            <form class="form-horizontal" method="post" action="../../../controllers/creature/editController.php">
                                 <div class="form-group">
-                                    <label for="company" class="col-sm-2 control-label">Company</label>
+                                    <label for="name" class="col-sm-2 control-label">Nombre</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="company" id="company" placeholder="Empresa" value="<?php echo $creature->getCompany(); ?>">
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="Name" value="<?php echo $creature->getName(); ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="position" class="col-sm-2 control-label">Position</label>
+                                    <label for="description" class="col-sm-2 control-label">Descripcion</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="position" name="position" placeholder="Cargo" value="<?php echo $creature->getPosition(); ?>">
+                                        <input type="text" class="form-control" id="description" name="description" placeholder="Descripcion" value="<?php echo $creature->getDescription(); ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="function" class="col-sm-2 control-label">Function</label>
+                                    <label for="avatar" class="col-sm-2 control-label">Avatar</label>
                                     <div class="col-sm-10">
-                                        <input type="textbox" class="form-control" id="function" name="function" placeholder="Función" value="<?php echo $creature->getFunction(); ?>">
+                                        <input type="textbox" class="form-control" id="avatar" name="avatar" placeholder="Avatar" value="<?php echo $creature->getAvatar(); ?>">
                                     </div>
                                 </div>
-                                <input type="hidden" name="id" value="<?php echo $creature->getIdOffer(); ?>">
+                                <div class="form-group">
+                                    <label for="attackPower" class="col-sm-2 control-label">Poder de Ataque</label>
+                                    <div class="col-sm-10">
+                                        <input type="textbox" class="form-control" id="attackPower" name="attackPower" placeholder="Poder de ataque" value="<?php echo $creature->getAttackPower(); ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lifeLevel" class="col-sm-2 control-label">Nivel de Vida</label>
+                                    <div class="col-sm-10">
+                                        <input type="textbox" class="form-control" id="lifeLevel" name="lifeLevel" placeholder="Nivel de Vida" value="<?php echo $creature->getLifeLevel(); ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="weapon" class="col-sm-2 control-label">Arma</label>
+                                    <div class="col-sm-10">
+                                        <input type="textbox" class="form-control" id="weapon" name="weapon" placeholder="Arma" value="<?php echo $creature->getWeapon(); ?>">
+                                    </div>
+                                </div>
+                                <input type="hidden" name="idCreature" value="<?php echo $creature->getIdCreature(); ?>">
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-default">Edit</button>
+                                        <button type="submit" class="btn btn-secondary">Editar</button>
                                     </div>
                                 </div>
                             </form>

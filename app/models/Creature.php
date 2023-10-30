@@ -40,6 +40,7 @@ class Creature {
     public function getWeapon() {
         return $this->weapon;
     }
+    
     public function setIdCreature($idCreature): void {
         $this->idCreature = $idCreature;
     }
