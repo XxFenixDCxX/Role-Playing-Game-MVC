@@ -61,7 +61,7 @@ Este proyecto se encuentra alojado en un repositorio de GitHub. Puedes acceder a
 
 ## Diagrama de Clases
 Se ha proporcionado un diagrama de clases que explica la arquitectura de la solución. Puedes consultarlo en el repositorio en la carpeta "docs" o en el siguiente enlace:
-[Enlace al Diagrama de Clases](./assets/img/DiagramaSecuenciasAgregar.png)
+[Enlace al Diagrama de Clases](./assets/img/DiagramaSecuenciasAgregar.jpg)
 
 ## Notas
 - Este proyecto se centra principalmente en la lógica y la estructura del backend, por lo que la parte frontend se mantiene simple y funcional.
