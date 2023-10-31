@@ -59,9 +59,9 @@ El proyecto proporciona las siguientes funcionalidades:
 Este proyecto se encuentra alojado en un repositorio de GitHub. Puedes acceder al código fuente y la historia de los commits en el siguiente enlace:
 [Enlace al Repositorio](https://github.com/XxFenixDCxX/Role-Playing-Game-MVC/tree/main)
 
-## Diagrama de Clases
-Se ha proporcionado un diagrama de clases que explica la arquitectura de la solución. Puedes consultarlo en el repositorio en la carpeta "docs" o en el siguiente enlace:
-[Enlace al Diagrama de Clases](./assets/img/DiagramaSecuenciasAgregar.jpg)
+## Diagrama de Secuencia de Agregar
+Se ha proporcionado un diagrama de secuencia que explica el funcionamiento del metodo de agregar criatura. Puedes consultarlo en el repositorio en la carpeta "assets/img" o en el siguiente enlace:
+[Enlace al Diagrama de Secuencia de agregar](./assets/img/DiagramaSecuenciasAgregar.jpg)
 
 ## Notas
 - Este proyecto se centra principalmente en la lógica y la estructura del backend, por lo que la parte frontend se mantiene simple y funcional.
