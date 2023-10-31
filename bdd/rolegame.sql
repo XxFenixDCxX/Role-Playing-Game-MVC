@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2023 a las 20:34:50
+-- Tiempo de generación: 31-10-2023 a las 13:51:39
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -42,7 +42,7 @@ CREATE TABLE `creature` (
 --
 
 INSERT INTO `creature` (`idCreature`, `name`, `description`, `avatar`, `attackPower`, `lifeLevel`, `weapon`) VALUES
-(1, 'Dragon', 'A powerful dragon.', 'https://static.wikia.nocookie.net/labibliotecadelviejomundo/images/8/8f/Drag%C3%B3n_de_Fuego_por_Sandara.jpg/revision/latest/zoom-crop/width/500/height/500?cb=20150413200815&path-prefix=es', 100, 200, 'Fire breath');
+(5, 'Mikel', 'Es un tio muy inteligente', 'https://www.sanpedroapostol.es/wp-content/uploads/2021/03/san-pedro.jpg', 10, 20, 'Puños');
 
 -- --------------------------------------------------------
 
@@ -87,7 +87,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `creature`
 --
 ALTER TABLE `creature`
-  MODIFY `idCreature` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idCreature` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
